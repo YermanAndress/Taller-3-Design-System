@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { MOCK_BUTTON_ID, MOCK_BUTTON_TEXT, MOCK_BUTTON_TYPES } from '../../../mocks/button.mocks';
+import { MOCK_BUTTON_ICON, MOCK_BUTTON_ID, MOCK_BUTTON_TEXT, MOCK_BUTTON_TYPES } from '../../../mocks/button.mocks';
 import { ButtonAtom } from './button.atom';
 
 describe('ButtonAtom', () => {
@@ -52,6 +52,30 @@ describe('ButtonAtom', () => {
     const button = fixture.debugElement.query(By.css('button'));
     button.nativeElement.click();
     expect(spy).toHaveBeenCalledWith(MOCK_BUTTON_ID);
+  });
+
+  it('No debería renderizar icono por defecto', () => {
+    fixture.detectChanges();
+    const icon = fixture.debugElement.query(By.css('button i.bi'));
+    expect(icon).toBeNull();
+  });
+
+  it('Debería renderizar el icono cart-fill cuando se pasa icon', () => {
+    component.icon = MOCK_BUTTON_ICON;
+    fixture.detectChanges();
+    const icon = fixture.debugElement.query(By.css('button i.bi'));
+    expect(icon).toBeTruthy();
+    expect(icon.nativeElement.classList).toContain(`bi-${MOCK_BUTTON_ICON}`);
+  });
+
+  it('Debería ocultar el icono cuando icon vuelve a vacío', () => {
+    component.icon = MOCK_BUTTON_ICON;
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css('button i.bi'))).toBeTruthy();
+
+    component.icon = '';
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css('button i.bi'))).toBeNull();
   });
 
 });

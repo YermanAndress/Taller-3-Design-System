@@ -6,7 +6,14 @@ import { ButtonType } from '../../../core/interfaces/core.interface';
  *
  * @description
  * Representa un botón reutilizable basado en Bootstrap.
+ * Soporta un icono opcional de Bootstrap Icons (`bi-*`) junto al texto.
  * Emite un evento al ser presionado.
+ *
+ * @example
+ * ```html
+ * <dsb-button-atom idButton="btn-add-cart" text="Añadir al carrito" type="primary" icon="cart-fill">
+ * </dsb-button-atom>
+ * ```
  */
 @Component({
   selector: 'dsb-button-atom',
@@ -14,9 +21,12 @@ import { ButtonType } from '../../../core/interfaces/core.interface';
     <button 
       [id]="idButton"
       type="button" 
-      class="btn"
+      class="btn d-inline-flex align-items-center gap-2"
       [class]="getClass()"
       (click)="onEmit()">
+      @if (icon) {
+        <i class="bi" [class]="'bi-' + icon" aria-hidden="true"></i>
+      }
       {{ text }}
     </button>`,
 })
@@ -29,6 +39,26 @@ export class ButtonAtom {
 
   /** Tipo visual del botón */
   @Input() type: ButtonType = 'primary';
+
+  /**
+   * Nombre del icono de Bootstrap Icons a mostrar junto al texto.
+   *
+   * @description
+   * Corresponde al sufijo del icono sin el prefijo `bi-`
+   * (por ejemplo `"cart-fill"` renderiza `bi bi-cart-fill`).
+   * Cuando es cadena vacía no se renderiza ningún icono,
+   * manteniendo compatibilidad con usos solo de texto.
+   *
+   * @type {string}
+   * @default ''
+   *
+   * @example
+   * ```html
+   * <dsb-button-atom icon="cart-fill" text="Añadir al carrito">
+   * </dsb-button-atom>
+   * ```
+   */
+  @Input() icon: string = '';
 
   /**
    * Evento emitido al hacer click en el botón.
