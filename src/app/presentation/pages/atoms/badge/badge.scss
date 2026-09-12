@@ -1,0 +1,20 @@
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+
+  &.discount {
+    background-color: #e63946;
+  }
+
+  &.rating {
+    background-color: #f4a261;
+  }
+
+  &.stock {
+    background-color: #2a9d8f;
+  }
+}
