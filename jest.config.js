@@ -6,7 +6,6 @@ module.exports = {
   testPathIgnorePatterns: [
     "<rootDir>/node_modules/",
     "<rootDir>/dist/",
-    "<rootDir>/src/",
   ],
   verbose: true,
   testEnvironment: "jsdom",
