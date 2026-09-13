@@ -44,11 +44,11 @@ export class Molecules {
     { text: 'Link 3', url: '/organisms' },
   ];
 
-  /** Ejemplos de la molecula ProductRating para el showcase */
-  productRatings: ProductRatingData[] = [
-    { rating: 4.5, reviewsCount: 120 },
-    { rating: 3.2, reviewsCount: 50 },
-    { rating: 5, reviewsCount: 8 },
+  /** Ejemplos de la molecula ProductRating para el showcase, con nombre de producto para dar contexto */
+  productRatings: { productName: string, data: ProductRatingData }[] = [
+    { productName: 'Audífonos Bluetooth', data: { rating: 4.5, reviewsCount: 120 } },
+    { productName: 'Mochila de viaje', data: { rating: 3.2, reviewsCount: 50 } },
+    { productName: 'Lámpara de escritorio', data: { rating: 5, reviewsCount: 8 } },
   ];
 
   /**

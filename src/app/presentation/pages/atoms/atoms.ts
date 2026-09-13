@@ -62,11 +62,11 @@ export class Atoms {
     { name: 'ban', size: 5 },
   ]
 
-  /** Ejemplos del atomo Badge propio para el showcase */
-  customBadges: BadgeConfig[] = [
-    { text: '-20%', variant: 'discount' },
-    { text: '4.5', variant: 'rating' },
-    { text: 'Disponible', variant: 'stock' },
+  /** Ejemplos del atomo Badge propio para el showcase, con su etiqueta descriptiva */
+  customBadges: { label: string, config: BadgeConfig }[] = [
+    { label: 'Descuento', config: { text: '-20%', variant: 'discount' } },
+    { label: 'Calificación', config: { text: '4.5', variant: 'rating' } },
+    { label: 'Estado de stock', config: { text: 'Disponible', variant: 'stock' } },
   ];
 
   /**

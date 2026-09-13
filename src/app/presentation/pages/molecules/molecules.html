@@ -13,7 +13,10 @@
 <dsb-container-atom title="Product Rating (custom)" >
     <section class="d-flex flex-column gap-3" >
         @for(item of productRatings; track item){
-            <app-product-rating [data]="item"></app-product-rating>
+            <div>
+                <p class="mb-1 fw-semibold">{{ item.productName }}</p>
+                <app-product-rating [data]="item.data"></app-product-rating>
+            </div>
         }
     </section>
 </dsb-container-atom>
