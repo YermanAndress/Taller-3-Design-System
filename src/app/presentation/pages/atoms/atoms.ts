@@ -8,6 +8,8 @@ import {
   ButtonType,
   ContainerAtom,
   IconAtom,
+  PriceAtom,
+  ProductImageAtom,
 } from '@brejcha13320/design-system-bootstrap';
 import { Badge } from './badge/badge';
 import { BadgeConfig } from './badge/badge.model';
@@ -26,11 +28,13 @@ import { BadgeConfig } from './badge/badge.model';
     ContainerAtom,
     CommonModule,
     Badge,
+    ProductImageAtom,
+    PriceAtom,
   ],
 })
 export class Atoms {
   /** Ejemplos de badges predefinidos del sistema de diseño base */
-  badges: { type: BadgeType, typeText: BadgeTypeText}[] = [
+  badges: { type: BadgeType; typeText: BadgeTypeText }[] = [
     { type: 'primary', typeText: 'text-white' },
     { type: 'secondary', typeText: 'text-white' },
     { type: 'success', typeText: 'text-white' },
@@ -42,7 +46,7 @@ export class Atoms {
   ];
 
   /** Ejemplos de botones predefinidos del sistema de diseño base */
-  buttons: { type: ButtonType, idButton: string}[] = [
+  buttons: { type: ButtonType; idButton: string }[] = [
     { type: 'primary', idButton: 'idButttonPrimary' },
     { type: 'secondary', idButton: 'idButttonSecondary' },
     { type: 'success', idButton: 'idButttonSuccess' },
@@ -54,34 +58,39 @@ export class Atoms {
   ];
 
   /** Ejemplos de iconos predefinidos del sistema de diseño base */
-  icons: { name: string, size: number }[] = [
+  icons: { name: string; size: number }[] = [
     { name: 'bootstrap', size: 1 },
     { name: 'apple', size: 2 },
     { name: 'bell', size: 3 },
     { name: 'android', size: 4 },
     { name: 'ban', size: 5 },
-  ]
+  ];
 
   /** Ejemplos del atomo Badge propio para el showcase, con su etiqueta descriptiva */
-  customBadges: { label: string, config: BadgeConfig }[] = [
+  customBadges: { label: string; config: BadgeConfig }[] = [
     { label: 'Descuento', config: { text: '-20%', variant: 'discount' } },
     { label: 'Calificación', config: { text: '4.5', variant: 'rating' } },
     { label: 'Estado de stock', config: { text: 'Disponible', variant: 'stock' } },
   ];
 
+  /** Ejemplo de imagen de producto de la librería */
+  productImage = { src: 'https://picsum.photos/400/300', alt: 'Audífonos Bluetooth' };
+
+  /** Ejemplo de precio de la librería */
+  productPrice = { value: 49.99, currency: 'USD' };
+
   /**
    * Maneja el evento de click de los botones de ejemplo.
    * @param idButton Identificador del botón presionado
    */
-  cartButton: { type: ButtonType, idButton: string, text: string, icon: string } = {
+  cartButton: { type: ButtonType; idButton: string; text: string; icon: string } = {
     type: 'primary',
     idButton: 'btn-add-cart',
     text: 'Añadir al carrito',
     icon: 'cart-fill',
   };
 
-  onClick(idButton: string){
+  onClick(idButton: string) {
     alert(`Click en el Boton ${idButton}`);
   }
-
 }
