@@ -9,7 +9,14 @@ import {
   ContainerAtom,
   IconAtom,
 } from '@brejcha13320/design-system-bootstrap';
+import { Badge } from './badge/badge';
+import { BadgeConfig } from './badge/badge.model';
 
+/**
+ * Página Showcase de átomos.
+ * Muestra ejemplos visuales de todos los átomos del sistema de diseño:
+ * iconos, badges, botones y el badge propio (custom) implementado en el taller.
+ */
 @Component({
   templateUrl: './atoms.html',
   imports: [
@@ -18,9 +25,11 @@ import {
     IconAtom,
     ContainerAtom,
     CommonModule,
+    Badge,
   ],
 })
 export class Atoms {
+  /** Ejemplos de badges predefinidos del sistema de diseño base */
   badges: { type: BadgeType, typeText: BadgeTypeText}[] = [
     { type: 'primary', typeText: 'text-white' },
     { type: 'secondary', typeText: 'text-white' },
@@ -32,6 +41,7 @@ export class Atoms {
     { type: 'dark', typeText: 'text-white' },
   ];
 
+  /** Ejemplos de botones predefinidos del sistema de diseño base */
   buttons: { type: ButtonType, idButton: string}[] = [
     { type: 'primary', idButton: 'idButttonPrimary' },
     { type: 'secondary', idButton: 'idButttonSecondary' },
@@ -43,6 +53,7 @@ export class Atoms {
     { type: 'dark', idButton: 'idButttonDark' },
   ];
 
+  /** Ejemplos de iconos predefinidos del sistema de diseño base */
   icons: { name: string, size: number }[] = [
     { name: 'bootstrap', size: 1 },
     { name: 'apple', size: 2 },
@@ -51,6 +62,17 @@ export class Atoms {
     { name: 'ban', size: 5 },
   ]
 
+  /** Ejemplos del atomo Badge propio para el showcase, con su etiqueta descriptiva */
+  customBadges: { label: string, config: BadgeConfig }[] = [
+    { label: 'Descuento', config: { text: '-20%', variant: 'discount' } },
+    { label: 'Calificación', config: { text: '4.5', variant: 'rating' } },
+    { label: 'Estado de stock', config: { text: 'Disponible', variant: 'stock' } },
+  ];
+
+  /**
+   * Maneja el evento de click de los botones de ejemplo.
+   * @param idButton Identificador del botón presionado
+   */
   cartButton: { type: ButtonType, idButton: string, text: string, icon: string } = {
     type: 'primary',
     idButton: 'btn-add-cart',

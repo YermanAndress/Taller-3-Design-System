@@ -27,6 +27,18 @@
     </section>
 </dsb-container-atom>
 
+<dsb-container-atom title="Badge (custom)" >
+    <p class="text-muted mb-3">Variantes disponibles:</p>
+    <section class="d-flex gap-4 mb-4" >
+        @for(item of customBadges; track item){
+            <div class="d-flex flex-column align-items-center gap-1">
+                <app-badge [config]="item.config"></app-badge>
+                <small class="text-muted">{{ item.label }}</small>
+            </div>
+        }
+    </section>
+</dsb-container-atom>
+
 <dsb-container-atom title="Add to Cart" >
     <dsb-button-atom
         [idButton]="cartButton.idButton"

@@ -1,0 +1,22 @@
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .stars {
+    color: #ccc;
+
+    span {
+      font-size: 26px;
+    }
+
+    .filled {
+      color: #f4a261;
+    }
+  }
+
+  .reviews-count {
+    font-size: 16px;
+    color: #666;
+  }
+}

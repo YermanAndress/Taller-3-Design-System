@@ -1,0 +1,11 @@
+<div class="product-rating">
+  <span class="stars">
+    <span *ngFor="let star of stars" [class.filled]="isFilled(star)">★</span>
+  </span>
+
+  <app-badge [config]="ratingBadgeConfig"></app-badge>
+
+  <span class="reviews-count">
+    ({{ data.reviewsCount }} reseñas)
+  </span>
+</div>
