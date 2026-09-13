@@ -26,3 +26,11 @@
         }
     </section>
 </dsb-container-atom>
+
+<dsb-container-atom title="Badge (custom)" >
+    <section class="d-flex gap-2" >
+        @for(badge of customBadges; track badge){
+            <app-badge [config]="badge"></app-badge>
+        }
+    </section>
+</dsb-container-atom>

@@ -9,6 +9,8 @@ import {
   ContainerAtom,
   IconAtom,
 } from '@brejcha13320/design-system-bootstrap';
+import { Badge } from './badge/badge';
+import { BadgeConfig } from './badge/badge.model';
 
 @Component({
   templateUrl: './atoms.html',
@@ -18,6 +20,7 @@ import {
     IconAtom,
     ContainerAtom,
     CommonModule,
+    Badge,
   ],
 })
 export class Atoms {
@@ -50,6 +53,13 @@ export class Atoms {
     { name: 'android', size: 4 },
     { name: 'ban', size: 5 },
   ]
+
+  /** Ejemplos del atomo Badge propio para el showcase */
+  customBadges: BadgeConfig[] = [
+    { text: '-20%', variant: 'discount' },
+    { text: '4.5', variant: 'rating' },
+    { text: 'Disponible', variant: 'stock' },
+  ];
 
   onClick(idButton: string){
     alert(`Click en el Boton ${idButton}`);
