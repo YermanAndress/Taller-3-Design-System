@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { MOCK_BUTTON_ICON, MOCK_BUTTON_ID, MOCK_BUTTON_TEXT, MOCK_BUTTON_TYPES } from '../../../mocks/button.mocks';
+import {
+  MOCK_BUTTON_ICON,
+  MOCK_BUTTON_ID,
+  MOCK_BUTTON_TEXT,
+  MOCK_BUTTON_TYPES,
+} from '../../../mocks/button.mocks';
 import { ButtonAtom } from './button.atom';
 
 describe('ButtonAtom', () => {
@@ -9,9 +14,8 @@ describe('ButtonAtom', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonAtom]
-    })
-    .compileComponents();
+      imports: [ButtonAtom],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ButtonAtom);
     component = fixture.componentInstance;
@@ -30,7 +34,7 @@ describe('ButtonAtom', () => {
   });
 
   it('Deberia agregar el type al Button', () => {
-    MOCK_BUTTON_TYPES.forEach(type => {
+    MOCK_BUTTON_TYPES.forEach((type) => {
       component.type = type;
       fixture.detectChanges();
       const button = fixture.debugElement.query(By.css('button'));
@@ -39,7 +43,7 @@ describe('ButtonAtom', () => {
   });
 
   it('Deberia retorna las clases el metodo getClass()', () => {
-    MOCK_BUTTON_TYPES.forEach(type => {
+    MOCK_BUTTON_TYPES.forEach((type) => {
       component.type = type;
       fixture.detectChanges();
       expect(component.getClass()).toContain(`btn-${type}`);
@@ -56,8 +60,7 @@ describe('ButtonAtom', () => {
 
   it('No debería renderizar icono por defecto', () => {
     fixture.detectChanges();
-    const icon = fixture.debugElement.query(By.css('button i.bi'));
-    expect(icon).toBeNull();
+    expect(fixture.debugElement.query(By.css('button i.bi'))).toBeNull();
   });
 
   it('Debería renderizar el icono cart-fill cuando se pasa icon', () => {
@@ -77,5 +80,4 @@ describe('ButtonAtom', () => {
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('button i.bi'))).toBeNull();
   });
-
 });
