@@ -1,0 +1,18 @@
+<div class="card product-card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column gap-2">
+        <dsb-card-header-molecule
+            [imageUrl]="imageUrl"
+            [title]="title"
+            [discountText]="discountText">
+        </dsb-card-header-molecule>
+        <dsb-rating-molecule [rating]="rating" [reviewsCount]="reviewsCount"></dsb-rating-molecule>
+        <dsb-price-atom [value]="price" [currency]="currency"></dsb-price-atom>
+        <dsb-button-atom
+            [idButton]="buttonId"
+            [text]="buttonText"
+            type="primary"
+            icon="cart-fill"
+            (clicker)="onAddToCart($event)">
+        </dsb-button-atom>
+    </div>
+</div>
