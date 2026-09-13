@@ -17,6 +17,8 @@ export { PriceAtom } from './lib/presentation/atoms/price/price.atom';
 export { NavLinkMolecule } from './lib/presentation/molecules/nav-link/nav-link.molecule';
 export { ButtonGroupMolecule } from './lib/presentation/molecules/button-group/button-group.molecule';
 export { CardHeaderMolecule } from './lib/presentation/molecules/card-header/card-header.molecule';
+export { RatingMolecule } from './lib/presentation/molecules/rating/rating.molecule';
 
 //Organisms
 export { NavbarOrganism } from './lib/presentation/organisms/navbar/navbar.organism';
+export { ProductCardOrganism } from './lib/presentation/organisms/product-card/product-card.organism';

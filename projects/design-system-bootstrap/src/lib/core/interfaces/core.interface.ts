@@ -82,3 +82,37 @@ export interface CardHeaderData {
   /** Etiqueta de descuento (vacío oculta el badge) */
   discountText: string;
 }
+
+/**
+ * Datos de valoración de un producto.
+ */
+export interface RatingData {
+  /** Promedio de calificación (0 a 5) */
+  rating: number;
+
+  /** Cantidad total de reseñas */
+  reviewsCount: number;
+}
+
+/**
+ * Datos completos de la tarjeta de producto.
+ */
+export interface ProductCardData {
+  /** URL de la imagen del producto */
+  imageUrl: string;
+
+  /** Título del producto */
+  title: string;
+
+  /** Etiqueta de descuento */
+  discountText: string;
+
+  /** Promedio de calificación (0 a 5) */
+  rating: number;
+
+  /** Cantidad total de reseñas */
+  reviewsCount: number;
+
+  /** Precio del producto */
+  price: number;
+}

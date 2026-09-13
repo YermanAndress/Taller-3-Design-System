@@ -1,0 +1,9 @@
+<div class="d-flex align-items-center gap-2" role="img" [attr.aria-label]="'Valoración ' + rating + ' de ' + maxStars">
+    <span>
+        @for(star of stars.slice(0, getNormalizedMaxStars()); track star){
+            <i class="bi" [class]="getStarClass(isFilled(star))" [style.fontSize]="size + 'rem'"></i>
+        }
+    </span>
+    <dsb-badge-atom [text]="ratingBadgeText" type="warning" typeText="text-dark"></dsb-badge-atom>
+    <span class="text-muted">({{ reviewsCount }} reseñas)</span>
+</div>
