@@ -1,50 +1,67 @@
-<dsb-container-atom title="Icon" >
-    <section class="d-flex gap-5" >
-        @for(icon of icons; track icon){
-            <dsb-icon-atom [icon]="icon.name" [size]="icon.size"></dsb-icon-atom>
-        }
-    </section>
+<dsb-container-atom title="Icon">
+  <section class="d-flex gap-5">
+    @for (icon of icons; track icon) {
+      <dsb-icon-atom [icon]="icon.name" [size]="icon.size"></dsb-icon-atom>
+    }
+  </section>
 </dsb-container-atom>
 
-<dsb-container-atom title="Badge" >
-    <section class="d-flex gap-2" >
-        @for(badge of badges; track badge){
-            <dsb-badge-atom [text]="badge.type | titlecase" [type]="badge.type" [typeText]="badge.typeText" ></dsb-badge-atom>
-        }
-    </section>
+<dsb-container-atom title="Badge">
+  <section class="d-flex gap-2">
+    @for (badge of badges; track badge) {
+      <dsb-badge-atom
+        [text]="badge.type | titlecase"
+        [type]="badge.type"
+        [typeText]="badge.typeText"
+      ></dsb-badge-atom>
+    }
+  </section>
 </dsb-container-atom>
 
-<dsb-container-atom title="Button" >
-    <section class="d-flex gap-2" >
-        @for(button of buttons; track button){
-            <dsb-button-atom 
-                [idButton]="button.idButton" 
-                [text]="button.type | titlecase" 
-                [type]="button.type" 
-                (clicker)="onClick($event)" >
-            </dsb-button-atom>
-        }
-    </section>
+<dsb-container-atom title="Button">
+  <section class="d-flex gap-2">
+    @for (button of buttons; track button) {
+      <dsb-button-atom
+        [idButton]="button.idButton"
+        [text]="button.type | titlecase"
+        [type]="button.type"
+        (clicker)="onClick($event)"
+      >
+      </dsb-button-atom>
+    }
+  </section>
 </dsb-container-atom>
 
-<dsb-container-atom title="Badge (custom)" >
-    <p class="text-muted mb-3">Variantes disponibles:</p>
-    <section class="d-flex gap-4 mb-4" >
-        @for(item of customBadges; track item){
-            <div class="d-flex flex-column align-items-center gap-1">
-                <app-badge [config]="item.config"></app-badge>
-                <small class="text-muted">{{ item.label }}</small>
-            </div>
-        }
-    </section>
+<dsb-container-atom title="Badge (custom)">
+  <p class="text-muted mb-3">Variantes disponibles:</p>
+  <section class="d-flex gap-4 mb-4">
+    @for (item of customBadges; track item) {
+      <div class="d-flex flex-column align-items-center gap-1">
+        <app-badge [config]="item.config"></app-badge>
+        <small class="text-muted">{{ item.label }}</small>
+      </div>
+    }
+  </section>
 </dsb-container-atom>
 
-<dsb-container-atom title="Add to Cart" >
-    <dsb-button-atom
-        [idButton]="cartButton.idButton"
-        [text]="cartButton.text"
-        [type]="cartButton.type"
-        [icon]="cartButton.icon"
-        (clicker)="onClick($event)" >
-    </dsb-button-atom>
+<dsb-container-atom title="Product Image">
+  <dsb-product-image-atom
+    [src]="productImage.src"
+    [alt]="productImage.alt"
+  ></dsb-product-image-atom>
+</dsb-container-atom>
+
+<dsb-container-atom title="Price">
+  <dsb-price-atom [value]="productPrice.value" [currency]="productPrice.currency"></dsb-price-atom>
+</dsb-container-atom>
+
+<dsb-container-atom title="Add to Cart">
+  <dsb-button-atom
+    [idButton]="cartButton.idButton"
+    [text]="cartButton.text"
+    [type]="cartButton.type"
+    [icon]="cartButton.icon"
+    (clicker)="onClick($event)"
+  >
+  </dsb-button-atom>
 </dsb-container-atom>

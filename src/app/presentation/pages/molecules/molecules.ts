@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { 
-  ButtonGroupData, 
-  ButtonGroupMolecule, 
-  ContainerAtom, 
-  NavLink, 
-  NavLinkMolecule 
+import {
+  ButtonGroupData,
+  ButtonGroupMolecule,
+  CardHeaderData,
+  CardHeaderMolecule,
+  ContainerAtom,
+  NavLink,
+  NavLinkMolecule
 } from '@brejcha13320/design-system-bootstrap';
 import { ProductRating } from './product-rating/product-rating';
 import { ProductRatingData } from './product-rating/product-rating.model';
@@ -22,6 +24,7 @@ import { ProductRatingData } from './product-rating/product-rating.model';
     ButtonGroupMolecule,
     NavLinkMolecule,
     ProductRating,
+    CardHeaderMolecule,
   ],
 })
 export class Molecules {
@@ -49,6 +52,12 @@ export class Molecules {
     { productName: 'Audífonos Bluetooth', data: { rating: 4.5, reviewsCount: 120 } },
     { productName: 'Mochila de viaje', data: { rating: 3.2, reviewsCount: 50 } },
     { productName: 'Lámpara de escritorio', data: { rating: 5, reviewsCount: 8 } },
+  ];
+
+  /** Ejemplos de la molécula CardHeader de la librería */
+  cardHeaders: CardHeaderData[] = [
+    { imageUrl: 'https://picsum.photos/400/300', title: 'Audífonos Bluetooth', discountText: '-20%' },
+    { imageUrl: 'https://picsum.photos/400/301', title: 'Mochila de viaje', discountText: '' },
   ];
 
   /**

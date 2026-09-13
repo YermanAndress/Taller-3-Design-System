@@ -20,3 +20,15 @@
         }
     </section>
 </dsb-container-atom>
+
+<dsb-container-atom title="Card Header" >
+    <section class="d-flex flex-column gap-3" >
+        @for(item of cardHeaders; track item){
+            <dsb-card-header-molecule
+                [imageUrl]="item.imageUrl"
+                [title]="item.title"
+                [discountText]="item.discountText">
+            </dsb-card-header-molecule>
+        }
+    </section>
+</dsb-container-atom>
