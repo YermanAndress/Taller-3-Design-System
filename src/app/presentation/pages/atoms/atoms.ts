@@ -73,6 +73,13 @@ export class Atoms {
    * Maneja el evento de click de los botones de ejemplo.
    * @param idButton Identificador del botón presionado
    */
+  cartButton: { type: ButtonType, idButton: string, text: string, icon: string } = {
+    type: 'primary',
+    idButton: 'btn-add-cart',
+    text: 'Añadir al carrito',
+    icon: 'cart-fill',
+  };
+
   onClick(idButton: string){
     alert(`Click en el Boton ${idButton}`);
   }

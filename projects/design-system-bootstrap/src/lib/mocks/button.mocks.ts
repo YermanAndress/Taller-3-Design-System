@@ -13,3 +13,4 @@ export const MOCK_BUTTON_TYPES: ButtonType[] = [
 
 export const MOCK_BUTTON_TEXT = 'Text de Prueba Button';
 export const MOCK_BUTTON_ID = 'button-id';
+export const MOCK_BUTTON_ICON = 'cart-fill';

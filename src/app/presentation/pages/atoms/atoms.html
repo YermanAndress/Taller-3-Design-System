@@ -38,3 +38,13 @@
         }
     </section>
 </dsb-container-atom>
+
+<dsb-container-atom title="Add to Cart" >
+    <dsb-button-atom
+        [idButton]="cartButton.idButton"
+        [text]="cartButton.text"
+        [type]="cartButton.type"
+        [icon]="cartButton.icon"
+        (clicker)="onClick($event)" >
+    </dsb-button-atom>
+</dsb-container-atom>
