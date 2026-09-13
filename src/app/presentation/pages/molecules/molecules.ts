@@ -6,6 +6,8 @@ import {
   NavLink, 
   NavLinkMolecule 
 } from '@brejcha13320/design-system-bootstrap';
+import { ProductRating } from './product-rating/product-rating';
+import { ProductRatingData } from './product-rating/product-rating.model';
 
 @Component({
   templateUrl: './molecules.html',
@@ -13,6 +15,7 @@ import {
     ContainerAtom,
     ButtonGroupMolecule,
     NavLinkMolecule,
+    ProductRating,
   ],
 })
 export class Molecules {
@@ -31,6 +34,13 @@ export class Molecules {
     { text: 'Link 1', url: '/atoms' },
     { text: 'Link 2', url: '/molecules' },
     { text: 'Link 3', url: '/organisms' },
+  ];
+
+  /** Ejemplos de la molecula ProductRating para el showcase */
+  productRatings: ProductRatingData[] = [
+    { rating: 4.5, reviewsCount: 120 },
+    { rating: 3.2, reviewsCount: 50 },
+    { rating: 5, reviewsCount: 8 },
   ];
 
   onClick(idButton: string){

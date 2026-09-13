@@ -9,3 +9,11 @@
     <dsb-nav-link-molecule [navLinks]="navLinks">
     </dsb-nav-link-molecule>
 </dsb-container-atom>
+
+<dsb-container-atom title="Product Rating (custom)" >
+    <section class="d-flex flex-column gap-3" >
+        @for(item of productRatings; track item){
+            <app-product-rating [data]="item"></app-product-rating>
+        }
+    </section>
+</dsb-container-atom>

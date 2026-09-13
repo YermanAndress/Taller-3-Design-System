@@ -1,13 +1,13 @@
 .product-rating {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 
   .stars {
     color: #ccc;
 
     span {
-      font-size: 16px;
+      font-size: 26px;
     }
 
     .filled {
@@ -16,7 +16,7 @@
   }
 
   .reviews-count {
-    font-size: 13px;
+    font-size: 16px;
     color: #666;
   }
 }
