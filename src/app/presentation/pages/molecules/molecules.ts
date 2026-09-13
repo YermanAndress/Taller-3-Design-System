@@ -9,6 +9,12 @@ import {
 import { ProductRating } from './product-rating/product-rating';
 import { ProductRatingData } from './product-rating/product-rating.model';
 
+/**
+ * Página Showcase de moléculas.
+ * Muestra ejemplos visuales de las moléculas del sistema de diseño:
+ * grupo de botones, navegación y la molécula propia ProductRating
+ * implementada en el taller.
+ */
 @Component({
   templateUrl: './molecules.html',
   imports: [
@@ -19,6 +25,7 @@ import { ProductRatingData } from './product-rating/product-rating.model';
   ],
 })
 export class Molecules {
+  /** Ejemplo de datos para el grupo de botones del sistema de diseño base */
   buttonsGroupData: ButtonGroupData[] = [
     { idButton: 'idButtonPrimary', type: 'primary', text: 'Text Primary' },
     { idButton: 'idButtonSecondary', type: 'secondary', text: 'Text Secondary' },
@@ -30,6 +37,7 @@ export class Molecules {
     { idButton: 'idButtonDark', type: 'dark', text: 'Text Dark' },
   ];
 
+  /** Ejemplo de enlaces de navegación del sistema de diseño base */
   navLinks: NavLink[] = [
     { text: 'Link 1', url: '/atoms' },
     { text: 'Link 2', url: '/molecules' },
@@ -43,6 +51,10 @@ export class Molecules {
     { rating: 5, reviewsCount: 8 },
   ];
 
+  /**
+   * Maneja el evento de click de los botones del grupo.
+   * @param idButton Identificador del botón presionado
+   */
   onClick(idButton: string){
     alert(`Click en el Boton de Grupo ${idButton}`);
   }

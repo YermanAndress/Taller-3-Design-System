@@ -12,6 +12,11 @@ import {
 import { Badge } from './badge/badge';
 import { BadgeConfig } from './badge/badge.model';
 
+/**
+ * Página Showcase de átomos.
+ * Muestra ejemplos visuales de todos los átomos del sistema de diseño:
+ * iconos, badges, botones y el badge propio (custom) implementado en el taller.
+ */
 @Component({
   templateUrl: './atoms.html',
   imports: [
@@ -24,6 +29,7 @@ import { BadgeConfig } from './badge/badge.model';
   ],
 })
 export class Atoms {
+  /** Ejemplos de badges predefinidos del sistema de diseño base */
   badges: { type: BadgeType, typeText: BadgeTypeText}[] = [
     { type: 'primary', typeText: 'text-white' },
     { type: 'secondary', typeText: 'text-white' },
@@ -35,6 +41,7 @@ export class Atoms {
     { type: 'dark', typeText: 'text-white' },
   ];
 
+  /** Ejemplos de botones predefinidos del sistema de diseño base */
   buttons: { type: ButtonType, idButton: string}[] = [
     { type: 'primary', idButton: 'idButttonPrimary' },
     { type: 'secondary', idButton: 'idButttonSecondary' },
@@ -46,6 +53,7 @@ export class Atoms {
     { type: 'dark', idButton: 'idButttonDark' },
   ];
 
+  /** Ejemplos de iconos predefinidos del sistema de diseño base */
   icons: { name: string, size: number }[] = [
     { name: 'bootstrap', size: 1 },
     { name: 'apple', size: 2 },
@@ -61,6 +69,10 @@ export class Atoms {
     { text: 'Disponible', variant: 'stock' },
   ];
 
+  /**
+   * Maneja el evento de click de los botones de ejemplo.
+   * @param idButton Identificador del botón presionado
+   */
   onClick(idButton: string){
     alert(`Click en el Boton ${idButton}`);
   }
