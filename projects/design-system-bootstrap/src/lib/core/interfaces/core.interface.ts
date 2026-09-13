@@ -68,3 +68,17 @@ export interface NavbarIconConfig {
     /** Tamaño del icono en unidades `rem` */
     size: number;
 }
+
+/**
+ * Datos de la cabecera de tarjeta de producto.
+ */
+export interface CardHeaderData {
+  /** URL de la imagen del producto */
+  imageUrl: string;
+
+  /** Título del producto */
+  title: string;
+
+  /** Etiqueta de descuento (vacío oculta el badge) */
+  discountText: string;
+}

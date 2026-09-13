@@ -1,0 +1,9 @@
+<div class="card-header-molecule d-flex flex-column gap-2">
+    <dsb-product-image-atom [src]="imageUrl" [alt]="imageAlt"></dsb-product-image-atom>
+    <div class="d-flex align-items-center justify-content-between gap-2">
+        <h5 class="mb-0">{{ title }}</h5>
+        @if (discountText) {
+            <dsb-badge-atom [text]="discountText" type="danger" typeText="text-white"></dsb-badge-atom>
+        }
+    </div>
+</div>
